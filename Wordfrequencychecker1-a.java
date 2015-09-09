@@ -37,7 +37,7 @@ public class Wordfrequencychecker {
                delims[i]= delims[i].substring(0, delims[i].length() - 1);
              
            }
-          if(delims[i].matches("[a-zA-Z]*$") && !delims[i].matches("^\\s*$")){ //"[a-zA-Z]*$"
+          if(!delims[i].matches("^[0-9]*\\.?[0-9]*$")){
              if (value == null) value = Integer.toString(linenumber);
              else  value = value.concat("," + Integer.toString(linenumber));
            hash.put(delims[i], value); 
