@@ -10,8 +10,11 @@ public class Wordfrequency {
     //public final Comparator<Integer> VALUE_COMPARE = new VALUE_COMPARE();
     
     public static TreeMap<String, Integer> SortByValue (HashMap<String, Integer> map) {
-  ValueComparator vc =  new ValueComparator(map);
+ System.out.println( "This is map");
+ ValueComparator vc =  new ValueComparator(map);
   TreeMap<String,Integer> sortedMap = new TreeMap<String,Integer>(vc);
+  System.out.println( "This is map" + map);
+  System.out.println( "This is sortedmap" + sortedMap);
   sortedMap.putAll(map);
   return sortedMap;
  }
@@ -30,7 +33,7 @@ public class Wordfrequency {
             return -1;
         } else {
             return 1;
-        } // returning 0 would merge keys 
+        } 
     }
    } 
 public static void main(String[] args) {
@@ -50,13 +53,14 @@ public static void main(String[] args) {
       boolean isObjectKeyInHashMap = hash.containsKey(s);
        if (isObjectKeyInHashMap == true){
            int value = hash.get(s);
-           
+           System.out.println("yes");
            value = value +1;
            hash.put(s, value);
           
        }
        else {
-           hash.put(s, 0);
+           
+           hash.put(s, 1);
              
        }   
     }
